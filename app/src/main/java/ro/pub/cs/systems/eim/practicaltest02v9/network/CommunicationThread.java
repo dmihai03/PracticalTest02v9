@@ -71,12 +71,22 @@ public class CommunicationThread extends Thread {
 
             JSONArray wordsArray = content.getJSONArray(Constants.ALL);
 
-            Log.i(Constants.TAG, "run: " + wordsArray.toString());
+            String result = "";
 
-            String result = null;
+            Log.i(Constants.TAG, "[conn thread]: number " + number);
+
+            for (int i = 0; i < wordsArray.length(); i++) {
+                if (wordsArray.getString(i).length() > number) {
+                    result += wordsArray.getString(i) + " ";
+                }
+            }
+
+            result += "\n";
 
             printWriter.println(result);
             printWriter.flush();
+
+            Log.i(Constants.TAG, "[comm thread]: sent response to client");
 
         } catch (IOException e) {
             Log.e(Constants.TAG, "[comm thread ]: io exception " + e.getMessage());

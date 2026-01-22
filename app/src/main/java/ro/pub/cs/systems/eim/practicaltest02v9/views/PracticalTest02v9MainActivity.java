@@ -35,7 +35,7 @@ public class PracticalTest02v9MainActivity extends AppCompatActivity {
         EditText clientPortEditText = (EditText) findViewById(R.id.client_port_edit_text);
         EditText numberEditText = (EditText) findViewById(R.id.number_edit_text);
         EditText wordEditText = (EditText) findViewById(R.id.word_edit_text);
-        TextView responseEditText = (TextView) findViewById(R.id.response_text_view);
+        TextView resultTextView = (TextView) findViewById(R.id.response_text_view);
 
         Button getResultsButton = (Button) findViewById(R.id.get_results_button);
 
@@ -48,7 +48,7 @@ public class PracticalTest02v9MainActivity extends AppCompatActivity {
                 String number = numberEditText.getText().toString();
 
                 clientThread = new ClientThread(serverAddressString, Integer.parseInt(clientPort),
-                        word, Integer.parseInt(number));
+                        word, Integer.parseInt(number), resultTextView);
                 clientThread.start();
             }
         });

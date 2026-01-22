@@ -17,13 +17,17 @@ public class ClientThread extends Thread{
     private String word;
     private int number;
 
+    private TextView resultTextView;
+
     private Socket socket;
 
-    public ClientThread(String address, int port, String word, int number) {
+    public ClientThread(String address, int port, String word, int number,
+                        TextView resultTextView) {
         this.address = address;
         this.port = port;
         this.word = word;
         this.number = number;
+        this.resultTextView = resultTextView;
     }
 
     @Override
@@ -47,6 +51,16 @@ public class ClientThread extends Thread{
             String response;
 
             response = bufferedReader.readLine();
+            final String result = response;
+
+            Log.i(Constants.TAG, "[client thread]: result " + result);
+
+            resultTextView.post(new Runnable() {
+                @Override
+                public void run() {
+                    resultTextView.setText(result);
+                }
+            });
 
         } catch (IOException ioException) {
             Log.e(Constants.TAG, "[CLIENT THREAD] An exception has occurred: " + ioException.getMessage());
