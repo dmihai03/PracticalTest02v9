@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Practical Test 02v9</string>
+    <string name="server">SERVER</string>
+    <string name="server_port">Port</string>
+    <string name="connect">Connect</string>
+    <string name="client">CLIENT</string>
+    <string name="server_address">Server address</string>
+    <string name="client_port">Port</string>
+    <string name="word">Word</string>
+    <string name="number">Number</string>
+    <string name="get_results">Get Results</string>
+    <string-array name="information_types">
+        <item>temperature</item>
+        <item>wind_speed</item>
+        <item>condition</item>
+        <item>pressure</item>
+        <item>humidity</item>
+        <item>all</item>
+    </string-array>
+</resources>
