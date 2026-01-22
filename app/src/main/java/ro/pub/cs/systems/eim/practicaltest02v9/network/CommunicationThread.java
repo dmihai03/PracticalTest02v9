@@ -41,6 +41,8 @@ public class CommunicationThread extends Thread {
             String word = bufferedReader.readLine();
             int number = Integer.parseInt(bufferedReader.readLine());
 
+            Log.i(Constants.TAG, "[comm thread]: clientul a cerut " + word + " " + number);
+
             String query = Constants.WEB_SERVICE_ADDRESS +
                     ":" + word;
             String pageSourceCode = "";

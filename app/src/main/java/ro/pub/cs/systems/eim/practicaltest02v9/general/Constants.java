@@ -9,7 +9,7 @@ public class Constants {
 
     final public static String ALL = "all";
 
-    final public static int serverPort = 1234;
+    final public static int serverPort = 5050;
 
     final public static String serverAddress = "localhost";
 
